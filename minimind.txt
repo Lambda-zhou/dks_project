@@ -1,0 +1,9 @@
+!apt-get update && apt-get install -y git-lfs
+!git lfs install
+!git clone https://github.com/jingyaogong/minimind.git
+%cd minimind
+!uv venv mnm --python 3.10.16
+!source mnm/bin/activate
+!uv pip install -r /kaggle/working/minimind/requirements.txt
+!git clone https://huggingface.co/jingyaogong/MiniMind2
+!streamlit run scripts/web_demo.py --server.address 0.0.0.0 --server.port 8080
